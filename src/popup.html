@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="../jquery.min.js"></script>
+    <script src="./scripts.js"></script>
+</head>
+<body>
+	<style>
+		body {
+			margin: 0px;
+		}
+		main{
+			font-family: 'Roboto', sans-serif;
+		}
+		.body{
+			box-sizing: border-box;    
+			padding: 8px 18px;
+			border-radius: 3px 3px 0px 0px;
+			background-color: #ffffff;
+			box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.18);
+		}
+		.main{
+			max-width: 322px;
+		}
+		.header{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 8px;
+		}
+		.header > *{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.logo img{
+			width: 38px;
+			height: 38px;
+			margin-right: 10px;
+		}
+		.logo span{
+			font-size: 24px;
+			color: #010101;
+		}
+		.rang img{
+			width: 12px;
+			height: 12px;
+			margin-right: 5px;
+		}
+		.rang span{
+			width: 56px;
+			height: 16px;
+			border-radius: 6px;
+			background-color: #6aef6e;
+			font-size: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-weight: 600;
+		}
+		.course{
+			display: flex;
+			justify-content: space-between;
+		}
+		.course > *{
+			width: 90px;
+			border-radius: 1px;
+			box-sizing: border-box;
+			padding: 5px;
+			background-color: #eaeaea;
+			margin-bottom: 8px;
+		}
+		.course .name{
+			display: flex;
+			justify-content: space-between;
+			font-size: 10px;
+			margin-bottom: 10px;
+		}
+		.course .number{
+			font-size: 14px;
+		}
+		.description{
+			margin-bottom: 8px;
+			border-radius: 1px;
+			background-color: #eaeaea;
+			display: flex;
+			padding: 6px;
+			font-size: 12px;
+		}
+		.description > *{
+			width: 50%;
+		}
+		.description .title{
+			font-weight: 600;
+			margin-bottom: 10px;
+		}
+		.Button_Currency {
+			font-size: 10px;
+			font-weight: 500;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			cursor: pointer;
+		}
+		.Button_Currency img{
+			width: 11px;
+			margin-right: 3px;
+		}
+		.Button_Currency span{
+			border-bottom: 1px dashed black;
+		}
+		.Currency{
+			font-size: 12px;
+			margin-top: 8px;
+			display: flex;
+			align-items: flex-start;
+		}
+		.Currency > *{
+			width: 50%;
+		}
+		.Currency .input{
+			display: flex;
+			align-items: center;
+		}
+		.Currency input{
+			box-sizing: border-box;
+			width: 83px;
+			padding: 3px;
+			font-size: 12px;
+			margin-right: 10px;
+		}
+		.Currency .output{
+			padding: 8px;
+			border-radius: 1px;
+			background-color: #eaeaea;
+		}
+		.Currency .output > *{
+			margin-bottom: 5px;
+		}
+		.footer{
+			box-sizing: border-box;
+			border-radius: 0px 0px 3px 3px ;
+			background-color: #171717;
+			padding: 18px;
+			box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.18);
+		}
+		.footer .title{
+			font-size: 18px;
+			font-weight: 500;
+			color: #ffffff;
+			margin-bottom: 10px;
+		}
+		.footer .interest{
+			font-size: 12px;
+			color: #ffffff;
+			margin-bottom: 10px;
+		}
+		.footer .interest span{
+			color: #6aef6e;
+		}
+		.footer .interest > *{
+			//margin-bottom: 5px;
+		}
+		.footer .text{
+			font-size: 12px;
+			color: #ffffff;
+			margin-bottom: 10px;
+		}
+		.link_block{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.link_block img{
+			height: 16px;
+			width: 16px;
+			margin-right: 8px;
+			cursor: pointer;
+		}
+		.link_block img:last-child{
+			margin-right: 0px;
+		}
+	</style>
+	
+	<main>
+		<div class="main">
+			<div class="body">
+				<div class="header">
+					<div class="logo">
+						<a  href="https://credits.com/" target="blank"><img src='../img/logo.png'></a>
+						<span>Credits (CS)</span>
+					</div>
+					<div class="rang">
+						<a  href="https://coinmarketcap.com/currencies/credits/" target="blank"><img src='../img/coinmarketcap.svg'></a>
+						<span id="Rank">
+							RANK 207
+						</span>
+					</div>
+				</div>
+				<div class="course">
+					<div class="ContUsdInterest">
+						<div class="name">
+							<span class="currency">
+								USD
+							</span>
+							<span class="CurUsdInterest">
+								+2.70 %
+							</span>
+						</div>
+						<div id="UsdNumber" class="number">
+							0.298496
+						</div>
+					</div>
+					<div class="eth" style="background-color: #eaeaea; margin-right: 5px;margin-left: 5px;">
+						<div class="name">
+							<span class="currency">
+								ETH
+							</span>
+							<span class="interest">
+							</span>
+						</div>
+						<div id="EthNumber" class="number">
+							0.000661
+						</div>
+					</div>
+					<div class="btc" >
+						<div class="name">
+							<span class="currency">
+								BTC
+							</span>
+							<span class="interest">
+							</span>
+						</div>
+						<div id="BtcNumber" class="number">
+							0.000047
+						</div>
+					</div>
+				</div>
+				<div class="description">
+					<div>
+						<div class="title">
+							Market Cap
+						</div>
+						<div id="MarketCap" class="info">
+							$32 776 712 USD
+						</div>
+					</div>
+					<div>
+						<div class="title">
+							Volume (24h)
+						</div>
+						<div id="VolumeUSD" class="info">
+							$1 275 832 USD
+						</div>
+					</div>
+				</div>
+				<div class="description">
+					<div>
+						<div class="title">
+							Circulating Supply
+						</div>
+						<div id="AvailableSupply" class="info">
+							138 268 126 CS
+						</div>
+					</div>
+					<div>
+						<div class="title">
+							Total Supply
+						</div>
+						<div id="TotalSupply" class="info">
+							249 471 071 CS
+						</div>
+					</div>
+				</div>
+				<div class="Button_Currency">
+					<img src='../img/converterBlack.svg'>
+					<span>Currency Converter</span>
+				</div>
+				<div class="Currency" style="display: none;">
+					<div class="input">
+						<input value="1" name="">
+						<span>
+							CS =
+						</span>
+					</div>
+					<div class="output">
+						<div class="Usd">
+							1.195 USD
+						</div>
+						<div class="Eth">
+							0.0028503755 ETH
+						</div>
+						<div class="Btc">
+							0.0001565 BTC
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="title">
+					ICO price
+				</div>
+				<div class="interest">
+					<div>
+						~ $0.167 USD <span id="UsdInterest">(50.72 %)</span>
+					</div>
+					<div>
+						0.0002 ETH <span id="EthInterest">(164.01 %)</span>
+					</div>
+					<div>
+						~ 0.0000174 BTC <span id="BtcInterest">(74.74 %)</span>
+					</div>
+				</div>
+				<div class="text">
+					Pre-ICO price was 0.0002 ETH + 30% bonus and could go up to 70% depending on ETH contribution; no private sale.
+				</div>
+				<div class="link_block">
+					<div>
+						<a  style="padding-right:3px" href="https://www.reddit.com/r/CreditsOfficial/" target="blank"><img src='../img/reddit.svg'></a>
+						<a  style="padding-right:3px" href="https://twitter.com/creditscom" target="blank"><img src='../img/twitter.svg'></a>
+						<a  style="padding-right:3px" href="https://www.facebook.com/creditscom/" target="blank"><img src='../img/fb.svg'></a>
+						<a  style="padding-right:3px" href="https://www.instagram.com/credits_com/" target="blank"><img src='../img/instagram.svg'></a>
+						<a  style="padding-right:3px" href="https://medium.com/@credits" target="blank"><img src='../img/medium.svg'></a>
+					</div>
+					<div>
+						<!--<img src='../img/info.svg'> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</main>
+</body>
+</html>
